@@ -12,9 +12,7 @@ header {
 }
 
 .logo {
-  font-size: 24px;
-  color: #333;
-  margin: 0;
+  width: 100px;
 }
 
 .nav-links {
@@ -87,10 +85,40 @@ header {
   border-radius: 20px;
   transition: background-color 0.3s;
   margin-left: 10px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; */
+}
+
+.search-button .search-icon {
+  display: none; /* Hide the icon by default (for larger screens) */
+}
+
+.search-button .search-text {
+  display: inline; /* Show the text by default */
 }
 
 .search-button:hover {
   background-color: #0056b3;
+}
+
+/* Styles pour le texte d'introduction */
+.hero-text {
+  margin: 20px 0;
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.hero-text p {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 0;
 }
 
 /* Styles pour le conteneur de filtres */
@@ -133,6 +161,25 @@ header {
 .filter-button i {
   margin-right: 5px;
   color: #007BFF;
+}
+
+/* Styles pour le texte d'information */
+.info-text {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  padding: 0 20px;
+  gap: 10px;
+}
+
+.info-text i {
+  color: #0065FC; /* Blue color for the info icon */
+  font-size: 16px;
+}
+
+.info-text p {
+  font-size: 16px;
+  margin: 0;
 }
 
 /****** General ***********/
@@ -439,7 +486,7 @@ footer {
   }
 
   .filter-button {
-      flex: 1 1 30%;
+      /* flex: 1 1 30%; */
       text-align: center;
   }
 
@@ -530,32 +577,35 @@ footer {
 
   .header-container {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: normal;
   }
 
   .logo {
-      margin: 0 auto;
-      padding: 10px 0;
+    margin: 0 auto;
+    padding: 10px 0;
   }
 
+
   .nav-links {
-      width: 100%;
-      justify-content: space-between;
+    width: 100%;
+    display: flex; /* Ensure flexbox is used */
+    justify-content: space-between; /* Distribute space evenly */
+    padding: 0; /* Remove any padding that might interfere */
   }
 
   .nav-links li {
-      width: 50%;
-      text-align: center;
-      border-bottom: 2px solid #F2F2F2;
+    width: 50%; /* Each link takes exactly 50% of the width */
+    text-align: center;
+    border-bottom: 2px solid #F2F2F2; /* Default border */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
   }
 
   .nav-links a {
-      display: block;
-      padding: 10px 0;
-  }
-
-  .nav-links a:hover {
-      border-bottom: 2px solid #007BFF;
+    display: block;
+    padding: 10px 0;
+    color: #000; /* Default color for links (black) */
+    width: 100%; /* Ensure the anchor tag takes the full width of the li */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
   }
 
   /* Search container */
@@ -572,6 +622,30 @@ footer {
       border-radius: 15px;
       padding: 10px;
       margin-left: -15px;
+      width: 40px; /* Fixed width to make it circular */
+      height: 40px;
+  }
+
+  .search-button .search-text {
+    display: none; /* Hide the "Rechercher" text on small screens */
+  }
+
+  .search-button .search-icon {
+    display: block; /* Show the magnifying glass icon on small screens */
+    font-size: 16px; /* Size of the magnifying glass icon */
+    color: white; /* Ensure the icon is white */
+  }
+
+  .hero-text {
+    padding: 0 10px; /* Réduire le padding pour mobile */
+  }
+
+  .hero-text h1 {
+    font-size: 18px; /* Réduire la taille pour mobile */
+  }
+
+  .hero-text p {
+    font-size: 14px; /* Réduire la taille pour mobile */
   }
 
   /* Filters container */
@@ -585,11 +659,24 @@ footer {
   .filters {
       flex-wrap: wrap;
       gap: 10px;
+      width: 100%;
   }
 
   .filter-button {
       flex: 1 1 45%;
       text-align: center;
+  }
+
+  .info-text {
+    padding: 0 10px; /* Réduire le padding pour mobile */
+  }
+
+  .info-text p {
+    font-size: 14px; /* Réduire la taille pour mobile */
+  }
+
+  .info-text i {
+    font-size: 14px; /* Réduire la taille de l'icône pour mobile */
   }
 
   /* Hebergements and Populaires */
