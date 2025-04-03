@@ -1,7 +1,6 @@
 /* Styles pour l'en-tête */
 header {
   background-color: #fff;
-  border-bottom: 1px solid #ddd;
   padding: 10px 20px;
 }
 
@@ -31,11 +30,12 @@ header {
   text-decoration: none;
   color: #333;
   padding: 5px 10px;
-  transition: border-bottom 0.3s;
+  transition: border-top 0.3s;
 }
 
 .nav-links a:hover {
-  border-bottom: 2px solid #007BFF;
+  color: #007BFF;
+  border-top: 2px solid #007BFF;
 }
 
 
@@ -572,7 +572,7 @@ footer {
 
   /* Header */
   header {
-      padding: 10px;
+      padding: 10px 0px;
   }
 
   .header-container {
@@ -591,6 +591,7 @@ footer {
     display: flex;
     justify-content: space-between;
     padding: 0;
+    gap: 0px;
   }
 
   .nav-links li {
@@ -606,6 +607,13 @@ footer {
     color: #000;
     width: 100%;
     box-sizing: border-box;
+    transition: border-bottom 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #007BFF;
+    border-bottom: 2px solid #007BFF;
+    border-top: none;
   }
 
   /* Search container */
